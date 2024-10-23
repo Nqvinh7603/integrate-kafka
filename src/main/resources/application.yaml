@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: integrate-kafka
+  kafka:
+    bootstrap-servers: localhost:9092
+    security:
+      protocol: PLAINTEXT
+    producer:
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: G00
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+kafka:
+    outbound-topic: first-topic
+    inbound-topic: first-topic
